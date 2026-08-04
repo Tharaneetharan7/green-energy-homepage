@@ -1,0 +1,309 @@
+.renewable-section {
+  padding: 110px 6%;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 8% 15%,
+      rgba(51, 177, 77, 0.08),
+      transparent 22rem
+    ),
+    linear-gradient(180deg, #f5faf7 0%, #ffffff 100%);
+}
+
+.renewable-container {
+  width: min(1450px, 100%);
+  margin: 0 auto;
+}
+
+.renewable-header {
+  max-width: 850px;
+  margin: 0 auto 54px;
+
+  text-align: center;
+}
+
+.renewable-subtitle {
+  margin: 0 0 16px;
+
+  color: #38ad43;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.renewable-title {
+  margin: 0;
+
+  color: #073f34;
+
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
+.renewable-description {
+  max-width: 760px;
+  margin: 24px auto 0;
+
+  color: #60736d;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.renewable-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.renewable-card {
+  min-height: 420px;
+  padding: 32px;
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid rgba(15, 100, 70, 0.09);
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow: 0 18px 48px rgba(11, 75, 54, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  animation: renewableFadeUp 0.8s ease both;
+}
+
+.renewable-card::before {
+  content: "";
+
+  width: 130px;
+  height: 130px;
+
+  position: absolute;
+  top: -65px;
+  right: -55px;
+
+  border-radius: 50%;
+
+  background: var(--service-accent);
+  opacity: 0.1;
+}
+
+.renewable-card:hover {
+  transform: translateY(-9px);
+
+  border-color: var(--service-accent);
+
+  box-shadow: 0 28px 65px rgba(11, 75, 54, 0.15);
+}
+
+.renewable-card-icon {
+  width: 70px;
+  height: 70px;
+
+  display: grid;
+  place-items: center;
+
+  position: relative;
+  z-index: 1;
+
+  border-radius: 18px;
+
+  background: var(--service-background);
+
+  font-size: 32px;
+
+  box-shadow: 0 12px 26px rgba(15, 90, 62, 0.08);
+}
+
+.renewable-card h3 {
+  margin: 26px 0 0;
+
+  color: #103f35;
+
+  font-size: 23px;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+.renewable-card-description {
+  margin: 18px 0 0;
+
+  color: #61756e;
+
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.renewable-model {
+  width: 100%;
+  margin-top: 24px;
+  padding: 17px 0;
+
+  display: grid;
+  gap: 7px;
+
+  border-top: 1px solid #e5efea;
+  border-bottom: 1px solid #e5efea;
+}
+
+.renewable-model span {
+  color: #82938e;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.renewable-model strong {
+  color: #174b3f;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.renewable-link {
+  margin-top: auto;
+  padding-top: 24px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  color: var(--service-accent);
+
+  font-size: 14px;
+  font-weight: 800;
+
+  transition:
+    gap 0.2s ease,
+    color 0.2s ease;
+}
+
+.renewable-link:hover {
+  gap: 14px;
+}
+
+.renewable-card--wind {
+  --service-accent: #238dba;
+  --service-background: #e9f7fc;
+}
+
+.renewable-card--irradiance {
+  --service-accent: #e9a718;
+  --service-background: #fff7df;
+}
+
+.renewable-card--solar {
+  --service-accent: #ef8b23;
+  --service-background: #fff1e3;
+}
+
+.renewable-card--consumption {
+  --service-accent: #2c76c7;
+  --service-background: #eaf3fd;
+}
+
+.renewable-card--price {
+  --service-accent: #8952b4;
+  --service-background: #f4ebfb;
+}
+
+.renewable-card--dashboard {
+  --service-accent: #2caa50;
+  --service-background: #eaf8ee;
+}
+
+.renewable-card:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.renewable-card:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.renewable-card:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+.renewable-card:nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+.renewable-card:nth-child(6) {
+  animation-delay: 0.4s;
+}
+
+@keyframes renewableFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .renewable-section {
+    padding: 90px 5%;
+  }
+
+  .renewable-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .renewable-section {
+    padding: 72px 18px;
+  }
+
+  .renewable-header {
+    margin-bottom: 38px;
+  }
+
+  .renewable-title {
+    font-size: 39px;
+  }
+
+  .renewable-description {
+    font-size: 15px;
+  }
+
+  .renewable-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .renewable-card {
+    min-height: auto;
+    padding: 27px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .renewable-card {
+    animation: none;
+    transition: none;
+  }
+
+  .renewable-link {
+    transition: none;
+  }
+}
